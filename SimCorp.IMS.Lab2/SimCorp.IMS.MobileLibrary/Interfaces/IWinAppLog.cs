@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WinFormsApp {
+namespace SimCorp.IMS.Lab2 {
     public interface IWinAppLog {
         string LogText { get; set; }
     }

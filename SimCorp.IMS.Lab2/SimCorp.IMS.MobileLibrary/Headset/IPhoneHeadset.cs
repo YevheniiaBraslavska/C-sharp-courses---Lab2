@@ -7,9 +7,11 @@ using System.Threading.Tasks;
 namespace SimCorp.IMS.Lab2 {
     public class IPhoneHeadset : IPlayback {
         private IOutput Output { get; }
+        public string BluetoothConnection { get; private set; }
 
-        public IPhoneHeadset(IOutput output) {
+        public IPhoneHeadset(IOutput output, string blthcon) {
             Output = output;
+            BluetoothConnection = blthcon;
         }
 
         public void Play(object data) {

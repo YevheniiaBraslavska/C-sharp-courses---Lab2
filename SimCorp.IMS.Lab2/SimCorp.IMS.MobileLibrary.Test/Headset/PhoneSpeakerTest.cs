@@ -11,9 +11,9 @@ namespace MobileLibrary.Test {
     public class PhoneSpeakerTest {
         [TestMethod]
         public void PlayValidOutputText() {
-            FakeOutput output = new FakeOutput();
-            PhoneSpeaker headset = new PhoneSpeaker(output);
-            object Data = new object();
+            var output = new FakeOutput();
+            var headset = new PhoneSpeaker(output,25.0f);
+            var Data = new object();
 
             headset.Play(Data);
 

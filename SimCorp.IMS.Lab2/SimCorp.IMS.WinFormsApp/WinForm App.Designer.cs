@@ -25,7 +25,6 @@
         private void InitializeComponent() {
             this.PlaybackGroupBox = new System.Windows.Forms.GroupBox();
             this.PhoneSpeakerButton = new System.Windows.Forms.RadioButton();
-            this.UnofficialIPhoneHeadsetButton = new System.Windows.Forms.RadioButton();
             this.SamsungHeadsetButton = new System.Windows.Forms.RadioButton();
             this.IPhoneHeadsetButton = new System.Windows.Forms.RadioButton();
             this.ChargerGroupBox = new System.Windows.Forms.GroupBox();
@@ -40,7 +39,6 @@
             // PlaybackGroupBox
             // 
             this.PlaybackGroupBox.Controls.Add(this.PhoneSpeakerButton);
-            this.PlaybackGroupBox.Controls.Add(this.UnofficialIPhoneHeadsetButton);
             this.PlaybackGroupBox.Controls.Add(this.SamsungHeadsetButton);
             this.PlaybackGroupBox.Controls.Add(this.IPhoneHeadsetButton);
             this.PlaybackGroupBox.Location = new System.Drawing.Point(26, 28);
@@ -53,22 +51,12 @@
             // PhoneSpeakerButton
             // 
             this.PhoneSpeakerButton.AutoSize = true;
-            this.PhoneSpeakerButton.Location = new System.Drawing.Point(16, 99);
+            this.PhoneSpeakerButton.Location = new System.Drawing.Point(16, 76);
             this.PhoneSpeakerButton.Name = "PhoneSpeakerButton";
             this.PhoneSpeakerButton.Size = new System.Drawing.Size(96, 17);
             this.PhoneSpeakerButton.TabIndex = 3;
             this.PhoneSpeakerButton.Text = "PhoneSpeaker";
             this.PhoneSpeakerButton.UseVisualStyleBackColor = true;
-            // 
-            // UnofficialIPhoneHeadsetButton
-            // 
-            this.UnofficialIPhoneHeadsetButton.AutoSize = true;
-            this.UnofficialIPhoneHeadsetButton.Location = new System.Drawing.Point(16, 76);
-            this.UnofficialIPhoneHeadsetButton.Name = "UnofficialIPhoneHeadsetButton";
-            this.UnofficialIPhoneHeadsetButton.Size = new System.Drawing.Size(143, 17);
-            this.UnofficialIPhoneHeadsetButton.TabIndex = 2;
-            this.UnofficialIPhoneHeadsetButton.Text = "UnofficialIPhoneHeadset";
-            this.UnofficialIPhoneHeadsetButton.UseVisualStyleBackColor = true;
             // 
             // SamsungHeadsetButton
             // 
@@ -151,6 +139,7 @@
             this.Controls.Add(this.TextBox);
             this.Controls.Add(this.ChargerGroupBox);
             this.Controls.Add(this.PlaybackGroupBox);
+            this.MaximizeBox = false;
             this.Name = "WinFormApp";
             this.Text = "WinForm App";
             this.PlaybackGroupBox.ResumeLayout(false);
@@ -165,7 +154,6 @@
 
         private System.Windows.Forms.GroupBox PlaybackGroupBox;
         private System.Windows.Forms.RadioButton PhoneSpeakerButton;
-        private System.Windows.Forms.RadioButton UnofficialIPhoneHeadsetButton;
         private System.Windows.Forms.RadioButton SamsungHeadsetButton;
         private System.Windows.Forms.RadioButton IPhoneHeadsetButton;
         private System.Windows.Forms.GroupBox ChargerGroupBox;

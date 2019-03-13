@@ -14,11 +14,15 @@ namespace WinFormsApp {
         }
 
         public void Write(string text) {
-            WinForm.LogText += text; 
+            WinForm.LogText += text;
         }
 
         public void WriteLine(string text) {
             WinForm.LogText += text + "\n";
+        }
+
+        public void Clean() {
+            WinForm.LogText = "";
         }
     }
 }

@@ -7,11 +7,11 @@ namespace MobileLibrary.Test {
     public class IPhoneHeadsetTest {
         [TestMethod]
         public void PlayValidOutputText() {
-            FakeOutput output = new FakeOutput();
-            IPhoneHeadset headset = new IPhoneHeadset(output);
-            object Data = new object();
+            var output = new FakeOutput();
+            var headset = new IPhoneHeadset(output,"2156:2356");
+            var data = new object();
 
-            headset.Play(Data);
+            headset.Play(data);
 
             Assert.AreEqual("IPhoneHeadset sound\n",output.OutputResult);
         }

@@ -20,5 +20,7 @@ namespace SimCorp.IMS.Lab2 {
         public void WriteLine(string text) {
             OutputResult = text + "\n";
         }
+
+        public void Clean() { }
     }
 }

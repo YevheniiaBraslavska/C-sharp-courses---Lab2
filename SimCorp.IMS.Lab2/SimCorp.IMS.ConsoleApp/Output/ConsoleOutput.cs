@@ -13,5 +13,7 @@ namespace SimCorp.IMS.Lab2 {
         public void WriteLine(string text) {
             Console.WriteLine(text);
         }
+
+        public void Clean() { }
     }
 }

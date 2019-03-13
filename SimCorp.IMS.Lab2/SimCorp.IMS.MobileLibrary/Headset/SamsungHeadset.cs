@@ -3,13 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SimCorp.IMS.MobileLibrary;
 
 namespace SimCorp.IMS.Lab2 {
     public class SamsungHeadset : IPlayback {
         private IOutput Output { get; }
+        public AudioPlug Plug { get; private set; }
 
-        public SamsungHeadset(IOutput output) {
+        public SamsungHeadset(IOutput output, AudioPlug plug) {
             Output = output;
+            Plug = plug;
         }
 
         public void Play(object data) {

@@ -8,5 +8,6 @@ namespace SimCorp.IMS.Lab2 {
     public interface IOutput {
         void Write(string text);
         void WriteLine(string text);
+        void Clean();
     }
 }

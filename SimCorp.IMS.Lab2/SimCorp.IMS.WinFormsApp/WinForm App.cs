@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using SimCorp.IMS.Lab2;
+using SimCorp.IMS.MobileLibrary;
 
 namespace WinFormsApp {
     public partial class WinFormApp : Form, IWinAppLog {
@@ -10,20 +11,25 @@ namespace WinFormsApp {
             Output = new WinLogOutput(this);
         }
 
-        public string LogText {
-            get {
+        public string LogText
+        {
+            get
+            {
                 return TextBox.Text;
             }
-            set {
+            set
+            {
                 TextBox.Text = value;
             }
         }
 
-        private SimCorpMobile Mobile {
+        private SimCorpMobile Mobile
+        {
             get;
         }
 
-        private IOutput Output {
+        private IOutput Output
+        {
             get;
         }
 
@@ -32,8 +38,8 @@ namespace WinFormsApp {
             Output.WriteLine("Set playback to mobile...");
             Mobile.PlaybackComponent = playback;
             Output.WriteLine("Play sound in mobile:");
-            object Data = new object();
-            Mobile.Play(Data);
+            var data = new object();
+            Mobile.Play(data);
             Output.WriteLine("");
         }
 
@@ -46,26 +52,23 @@ namespace WinFormsApp {
             Output.WriteLine("");
         }
 
-        private void ApplyButton_Click(object sender, EventArgs e) {
+        private void ApplyButton_Click(object sender, EventArgs args) {
+            Output.Clean();
+
             //Playback
             if (IPhoneHeadsetButton.Checked == true) {
-                SetPlayback(new IPhoneHeadset(Output));
-            }
-            else if (SamsungHeadsetButton.Checked == true) {
-                SetPlayback(new SamsungHeadset(Output));
-            }
-            else if (UnofficialIPhoneHeadsetButton.Checked == true) {
-                SetPlayback(new UnofficialIPhoneHeadset(Output));
-            }
-            else if (PhoneSpeakerButton.Checked == true) {
-                SetPlayback(new PhoneSpeaker(Output));
+                SetPlayback(new IPhoneHeadset(Output, "2365:2015"));
+            } else if (SamsungHeadsetButton.Checked == true) {
+                var plug = new AudioPlug(200, 100, 3.5f);
+                SetPlayback(new SamsungHeadset(Output, plug));
+            } else if (PhoneSpeakerButton.Checked == true) {
+                SetPlayback(new PhoneSpeaker(Output,24.0f));
             }
 
             //Charger
             if (ExternalChargerButton.Checked == true) {
                 SetCharger(new ExternalCharger(Output));
-            }
-            else if (USBChargerButton.Checked == true) {
+            } else if (USBChargerButton.Checked == true) {
                 SetCharger(new USBCharger(Output));
             }
         }

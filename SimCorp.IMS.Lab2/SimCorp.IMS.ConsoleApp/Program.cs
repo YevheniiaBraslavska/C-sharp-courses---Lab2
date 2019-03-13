@@ -1,4 +1,6 @@
 ﻿using System;
+using System.ComponentModel.Design;
+using SimCorp.IMS.MobileLibrary;
 
 namespace SimCorp.IMS.Lab2 {
     class Program {
@@ -36,21 +38,19 @@ namespace SimCorp.IMS.Lab2 {
             Console.WriteLine("Select playback component (specify index):");
             Console.WriteLine("1 - IPhoneHeadset");
             Console.WriteLine("2 - SamsungHeadset");
-            Console.WriteLine("3 - UnofficialIPhoneHeadset");
-            Console.WriteLine("4 - PhoneSpeaker");
+            Console.WriteLine("3 - PhoneSpeaker");
 
-            string key = Console.ReadLine();
-            switch (key.ToCharArray()[0]) {
+            var key = Console.ReadLine();
+            var headsettype = (key != "") ? key[0] : '0';
+            switch (headsettype) {
                 case '1':
-                    return new IPhoneHeadset(output);
+                return new IPhoneHeadset(output, "2569:1256");
                 case '2':
-                    return new SamsungHeadset(output);
-                case '3':
-                    return new UnofficialIPhoneHeadset(output);
-                case '4':
-                    return new PhoneSpeaker(output);
+                var plug = new AudioPlug(102, 100, 3.5f);
+                return new SamsungHeadset(output, plug);
                 default:
-                    return null;
+                output.WriteLine("Headset type was not recognised. Using default headset");
+                return new PhoneSpeaker(output,24.0f);
             }
         }
 
@@ -59,14 +59,14 @@ namespace SimCorp.IMS.Lab2 {
             Console.WriteLine("1 - ExternalCharger");
             Console.WriteLine("2 - USBCharger");
 
-            string key = Console.ReadLine();
-            switch (key.ToCharArray()[0]) {
-                case '1':
-                    return new ExternalCharger(output);
+            var key = Console.ReadLine();
+            var chargertype = (key != "") ? key[0] : '0';
+            switch (chargertype) {
                 case '2':
-                    return new USBCharger(output);
+                return new USBCharger(output);
                 default:
-                    return null;
+                output.WriteLine("Charger type was not recognised. Using default charger");
+                return new ExternalCharger(output);
             }
         }
     }

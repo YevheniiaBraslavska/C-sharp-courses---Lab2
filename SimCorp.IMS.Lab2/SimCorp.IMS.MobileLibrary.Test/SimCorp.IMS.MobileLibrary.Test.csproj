@@ -54,7 +54,6 @@
     <Compile Include="Headset\SamsungHeadsetTest.cs" />
     <Compile Include="Charger\ExternalChargerTest.cs" />
     <Compile Include="Charger\USBChargerTest.cs" />
-    <Compile Include="Headset\UnofficialIPhoneHeadsetTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -50,7 +50,6 @@
     <Compile Include="Headset\IPhoneHeadset.cs" />
     <Compile Include="Headset\PhoneSpeaker.cs" />
     <Compile Include="Headset\SamsungHeadset.cs" />
-    <Compile Include="Headset\UnofficialIPhoneHeadset.cs" />
     <Compile Include="Interfaces\ICharger.cs" />
     <Compile Include="Interfaces\IInput.cs" />
     <Compile Include="Interfaces\IOutput.cs" />
@@ -65,6 +64,7 @@
     <Compile Include="Screen\ScreenAttribute.cs" />
     <Compile Include="Screen\SingleTouchScreen.cs" />
     <Compile Include="SimCorpMobile.cs" />
+    <Compile Include="Slot\AudioPlug.cs" />
     <Compile Include="Slot\SDCardSlot.cs" />
     <Compile Include="Slot\SimCardSlot.cs" />
     <Compile Include="Slot\SlotAttribute.cs" />
