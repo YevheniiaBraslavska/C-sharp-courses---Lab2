@@ -66,10 +66,10 @@ namespace WinFormsApp {
             }
 
             //Charger
-            if (ExternalChargerButton.Checked == true) {
-                SetCharger(new ExternalCharger(Output));
+            if (WirelessChargerButton.Checked == true) {
+                SetCharger(new WirelessCharger(Output,1.5f));
             } else if (USBChargerButton.Checked == true) {
-                SetCharger(new USBCharger(Output));
+                SetCharger(new USBCharger(Output,1.5f,USBCharger.Ports.StandartDownstreamPort));
             }
         }
     }

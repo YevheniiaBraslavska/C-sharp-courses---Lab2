@@ -5,24 +5,24 @@ using SimCorp.IMS.MobileLibrary;
 namespace SimCorp.IMS.Lab2 {
     class Program {
         static void Main(string[] args) {
-            SimCorpMobile mobile = new SimCorpMobile();
+            var mobile = new SimCorpMobile();
             IOutput output = new ConsoleOutput();
 
             //Get playback
-            IPlayback playback = ChoosePlayback(output);
+            var playback = ChoosePlayback(output);
             if (playback != null) {
                 output.WriteLine($"{playback.GetType().Name} playback selected");
                 output.WriteLine("Set playback to mobile...");
                 mobile.PlaybackComponent = playback;
                 output.WriteLine("Play sound in mobile:");
-                object data = new object();
+                var data = new object();
                 mobile.Play(data);
             }
 
             Console.WriteLine("\n");
 
             //Get charger
-            ICharger charger = ChooseCharger(output);
+            var charger = ChooseCharger(output);
             if (charger != null) {
                 output.WriteLine($"{charger.GetType().Name} charger selected");
                 output.WriteLine("Set charger to mobile...");
@@ -56,17 +56,17 @@ namespace SimCorp.IMS.Lab2 {
 
         public static ICharger ChooseCharger(IOutput output) {
             Console.WriteLine("Select charger component (specify index):");
-            Console.WriteLine("1 - ExternalCharger");
+            Console.WriteLine("1 - WirelessCharger");
             Console.WriteLine("2 - USBCharger");
 
             var key = Console.ReadLine();
             var chargertype = (key != "") ? key[0] : '0';
             switch (chargertype) {
                 case '2':
-                return new USBCharger(output);
+                return new USBCharger(output,1.5f,USBCharger.Ports.DedicatedChargingPort);
                 default:
                 output.WriteLine("Charger type was not recognised. Using default charger");
-                return new ExternalCharger(output);
+                return new WirelessCharger(output,1.5f);
             }
         }
     }

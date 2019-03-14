@@ -7,8 +7,8 @@ namespace MobileLibrary.Test {
     public class USBChargerTest {
         [TestMethod]
         public void ChargeValidOutputText() {
-            FakeOutput output = new FakeOutput();
-            USBCharger charger = new USBCharger(output);
+            var output = new FakeOutput();
+            var charger = new USBCharger(output,1.5f,USBCharger.Ports.DedicatedChargingPort);
 
             charger.Charge();
 

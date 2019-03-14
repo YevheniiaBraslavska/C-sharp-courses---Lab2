@@ -44,7 +44,7 @@
     <Compile Include="Abstracts\Layout.cs" />
     <Compile Include="Abstracts\Mobile.cs" />
     <Compile Include="Battery\BatteryAttribute.cs" />
-    <Compile Include="Charger\ExternalCharger.cs" />
+    <Compile Include="Charger\WirelessCharger.cs" />
     <Compile Include="Charger\USBCharger.cs" />
     <Compile Include="FakeOutput.cs" />
     <Compile Include="Headset\IPhoneHeadset.cs" />

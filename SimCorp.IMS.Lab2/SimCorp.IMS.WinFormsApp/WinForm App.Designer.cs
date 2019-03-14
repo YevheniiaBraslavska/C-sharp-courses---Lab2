@@ -29,7 +29,7 @@
             this.IPhoneHeadsetButton = new System.Windows.Forms.RadioButton();
             this.ChargerGroupBox = new System.Windows.Forms.GroupBox();
             this.USBChargerButton = new System.Windows.Forms.RadioButton();
-            this.ExternalChargerButton = new System.Windows.Forms.RadioButton();
+            this.WirelessChargerButton = new System.Windows.Forms.RadioButton();
             this.TextBox = new System.Windows.Forms.RichTextBox();
             this.ApplyButton = new System.Windows.Forms.Button();
             this.PlaybackGroupBox.SuspendLayout();
@@ -81,7 +81,7 @@
             // ChargerGroupBox
             // 
             this.ChargerGroupBox.Controls.Add(this.USBChargerButton);
-            this.ChargerGroupBox.Controls.Add(this.ExternalChargerButton);
+            this.ChargerGroupBox.Controls.Add(this.WirelessChargerButton);
             this.ChargerGroupBox.Location = new System.Drawing.Point(234, 28);
             this.ChargerGroupBox.Name = "ChargerGroupBox";
             this.ChargerGroupBox.Size = new System.Drawing.Size(183, 133);
@@ -100,16 +100,16 @@
             this.USBChargerButton.Text = "USBCharger";
             this.USBChargerButton.UseVisualStyleBackColor = true;
             // 
-            // ExternalChargerButton
+            // WirelessChargerButton
             // 
-            this.ExternalChargerButton.AutoSize = true;
-            this.ExternalChargerButton.Location = new System.Drawing.Point(17, 30);
-            this.ExternalChargerButton.Name = "ExternalChargerButton";
-            this.ExternalChargerButton.Size = new System.Drawing.Size(100, 17);
-            this.ExternalChargerButton.TabIndex = 0;
-            this.ExternalChargerButton.TabStop = true;
-            this.ExternalChargerButton.Text = "ExternalCharger";
-            this.ExternalChargerButton.UseVisualStyleBackColor = true;
+            this.WirelessChargerButton.AutoSize = true;
+            this.WirelessChargerButton.Location = new System.Drawing.Point(17, 30);
+            this.WirelessChargerButton.Name = "WirelessChargerButton";
+            this.WirelessChargerButton.Size = new System.Drawing.Size(100, 17);
+            this.WirelessChargerButton.TabIndex = 0;
+            this.WirelessChargerButton.TabStop = true;
+            this.WirelessChargerButton.Text = "WirelessCharger";
+            this.WirelessChargerButton.UseVisualStyleBackColor = true;
             // 
             // TextBox
             // 
@@ -158,7 +158,7 @@
         private System.Windows.Forms.RadioButton IPhoneHeadsetButton;
         private System.Windows.Forms.GroupBox ChargerGroupBox;
         private System.Windows.Forms.RadioButton USBChargerButton;
-        private System.Windows.Forms.RadioButton ExternalChargerButton;
+        private System.Windows.Forms.RadioButton WirelessChargerButton;
         private System.Windows.Forms.RichTextBox TextBox;
         private System.Windows.Forms.Button ApplyButton;
     }

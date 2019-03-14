@@ -4,15 +4,15 @@ using SimCorp.IMS.Lab2;
 
 namespace MobileLibrary.Test {
     [TestClass]
-    public class ExternalChargerTest {
+    public class WirelessChargerTest {
         [TestMethod]
         public void ChargeValidOutputText() {
             FakeOutput output = new FakeOutput();
-            ExternalCharger charger = new ExternalCharger(output);
+            WirelessCharger charger = new WirelessCharger(output,1.5f);
 
             charger.Charge();
 
-            Assert.AreEqual("Charge with ExternalCharger\n", output.OutputResult);
+            Assert.AreEqual("Charge with WirelessCharger\n", output.OutputResult);
         }
     }
 }
