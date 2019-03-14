@@ -11,8 +11,8 @@ namespace SimCorp.IMS.Lab2 {
             //Get playback
             var playback = ChoosePlayback(output);
             if (playback != null) {
-                output.WriteLine($"{playback.GetType().Name} playback selected");
-                output.WriteLine("Set playback to mobile...");
+                SelectLog(output,playback);
+                SetLog(output,"playback");
                 mobile.PlaybackComponent = playback;
                 output.WriteLine("Play sound in mobile:");
                 var data = new object();
@@ -24,7 +24,7 @@ namespace SimCorp.IMS.Lab2 {
             //Get charger
             var charger = ChooseCharger(output);
             if (charger != null) {
-                output.WriteLine($"{charger.GetType().Name} charger selected");
+                SelectLog(output,charger);
                 output.WriteLine("Set charger to mobile...");
                 mobile.ChargingComponent = charger;
                 output.WriteLine("Charging mobile:");
@@ -50,7 +50,7 @@ namespace SimCorp.IMS.Lab2 {
                 return new SamsungHeadset(output, plug);
                 default:
                 output.WriteLine("Headset type was not recognised. Using default headset");
-                return new PhoneSpeaker(output,24.0f);
+                return new PhoneSpeaker(output, 24.0f);
             }
         }
 
@@ -63,11 +63,20 @@ namespace SimCorp.IMS.Lab2 {
             var chargertype = (key != "") ? key[0] : '0';
             switch (chargertype) {
                 case '2':
-                return new USBCharger(output,1.5f,USBCharger.Ports.DedicatedChargingPort);
+                return new USBCharger(output, 1.5f, USBCharger.Ports.DedicatedChargingPort);
                 default:
                 output.WriteLine("Charger type was not recognised. Using default charger");
-                return new WirelessCharger(output,1.5f);
+                return new WirelessCharger(output, 1.5f);
             }
+        }
+
+        public static void SelectLog(IOutput output, object obj) {
+            output.WriteLine($"{obj.GetType().Name} playback selected");
+        }
+
+        public static void SetLog(IOutput output, string type)
+        {
+            output.WriteLine($"Set {type} to mobile...");
         }
     }
 }
